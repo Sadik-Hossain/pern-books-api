@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const bookRoute = require("./routes/books.route");
 require("dotenv").config();
 const port = process.env.PORT || 5000;
 
@@ -10,7 +11,7 @@ app.use(cors());
 app.use(express.json());
 
 // routes
-// app.use("/",myRoute)
+app.use("/api", bookRoute);
 
 app.get("/", (req, res) => {
   res.send("hello from server");
